@@ -1,16 +1,22 @@
 # Upload an artifact to GitHub
+- name: Create Artifact
+  run: echo "Hello World" >> text.txt
 - name: Upload Artifact to Github Build Job
   uses: actions/upload-artifact@v2
   with:
     name: my-artifact
-    path: pub-sec-t3-Nic-Kozell/.github/workflows/ci.yml
-
-
+    path: text.txt
+    
+    download-artifact:
+      runs-on: ubuntu-latest
+      steps:
 # Download an artifact from GitHub
 - name: Download Artifact from Github Build Job
   uses: actions/download-artifact@v2
   with:
     name: my-artifact
+    -name: Do Something
+    run: cat.txt
 
 ---
 ########
