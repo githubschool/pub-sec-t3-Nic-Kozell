@@ -1,5 +1,6 @@
 # Upload an artifact to GitHub
 - name: Create Artifact
+  needs: build
   run: echo "Hello World" >> text.txt
 - name: Upload Artifact to Github Build Job
   uses: actions/upload-artifact@v2
